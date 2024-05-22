@@ -1,11 +1,12 @@
-![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/ae529c21-9312-4484-ad64-73b8a34c1f9d)# Frame By Frame 
-ИС для фотостудии.
+# Frame By Frame (ИС для фотостудии)
 
 # Окно авторизации
 ![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/35e90461-e1ce-4e00-ae90-6617b30a716a)
 
 # Окно администратора
 ![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/1a9f521f-7057-47a7-b406-6a95813d0b64)
+
+![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/ae529c21-9312-4484-ad64-73b8a34c1f9d)
 
 ![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/b8b55324-9640-475f-9ed4-c5e2d8ccb482)
 
