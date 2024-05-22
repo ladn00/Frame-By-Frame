@@ -16,8 +16,6 @@
 
 ![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/ed426711-cd04-4e7c-93e4-b956d645931d)
 
-![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/8f97784a-8745-4b10-ae40-d99af64dfda3)
-
 ![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/47a4238a-549a-4c35-a59c-d1faa016e35f)
 
 Фильтры
@@ -37,17 +35,18 @@
 
 ![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/54d6555d-4c4e-4fcd-b9e2-2fac4eee20fb)
 
-
-# БД Фотостудии
-![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/ccd555e7-658a-449d-b0a8-8ea30486afb0)
-
 ![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/9d83f83a-7978-4f47-baa5-e472d882c725)
 
 ![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/f00d78e2-0b6e-48a6-8003-4ae03ec307d2)
 
 ![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/8b9056f7-a9b2-4d3d-9f88-0d67dc115269)
 
+# БД Фотостудии
 
-# Диаграмма-прецедентов
-![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/d70d5b64-2e53-4b69-8a95-27f4c61ee189)
+![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/ccd555e7-658a-449d-b0a8-8ea30486afb0)
+
+# Диаграмма прецедентов
+
+![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/2410b550-0c72-49a9-9a36-460ea0255f45)
+
 
