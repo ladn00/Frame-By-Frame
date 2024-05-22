@@ -21,6 +21,7 @@
 ![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/47a4238a-549a-4c35-a59c-d1faa016e35f)
 
 Фильтры
+
 ![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/57cac2b3-3938-40e9-9e65-3ebffeb4b18b)
 
 
@@ -31,14 +32,6 @@
 # Окно фотографа
 
 ![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/a411df8d-9c9c-433f-9e7f-11d1842a2a3e)
-
-![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/dae1e1b2-029f-4249-b3f0-1f26a152d20d)
-
-![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/0fceec76-645a-4c31-ba56-74d61c377b2d)
-
-![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/637e8ca4-eb9e-4870-9f30-77cf51da6aaa)
-
-![image](https://github.com/ladn00/Frame-By-Frame-latest-/assets/124509186/30f8a6f1-4ec2-4906-b408-dfe73fb206dd)
 
 # Окно клиента
 
