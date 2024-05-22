@@ -1,0 +1,191 @@
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\Фотостудия.exe.config
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\Фотостудия.exe
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\Фотостудия.pdb
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\MainWindow.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\App.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Фотостудия_MarkupCompile.cache
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Фотостудия_MarkupCompile.lref
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\MainWindow.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Фотостудия.g.resources
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Фотостудия.Properties.Resources.resources
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Фотостудия.csproj.GenerateResource.cache
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Фотостудия.csproj.CoreCompileInputs.cache
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Фотостудия.exe
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Фотостудия.pdb
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\App.baml
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\EntityFramework.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\EntityFramework.xml
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Фотостудия_Content.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\ForAdminWindow.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\ClientPage.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\ForAdminWindow.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\ClientPage.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\ClientTable.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\ClientTable.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\VidUslugiTable.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\VidUslugiTable.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\PhotographerTable.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\PhotographerTable.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\LocationsTable.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\LocationsTable.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\ChartPage.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\HomePage.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\OtchetPage.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\ChartPage.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\HomePage.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\OtchetPage.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\AddClientWin.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\AddClientWin.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\AddPhotographerWin.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\AddPhotographerWin.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Фотостудия.csproj.AssemblyReference.cache
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\AddVidUslugiWin.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\AddVidUslugiWin.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\AddLocation.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\AddLocation.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\DogovorTable.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\DogovorTable.baml
+C:\Users\andre\Desktop\Фотостудия — копия\bin\Debug\Фотостудия.exe.config
+C:\Users\andre\Desktop\Фотостудия — копия\bin\Debug\Фотостудия.exe
+C:\Users\andre\Desktop\Фотостудия — копия\bin\Debug\Фотостудия.pdb
+C:\Users\andre\Desktop\Фотостудия — копия\bin\Debug\EntityFramework.dll
+C:\Users\andre\Desktop\Фотостудия — копия\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\andre\Desktop\Фотостудия — копия\bin\Debug\EntityFramework.xml
+C:\Users\andre\Desktop\Фотостудия — копия\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\andre\Desktop\Фотостудия — копия\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Фотостудия.csproj.AssemblyReference.cache
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\AddClientWin.g.cs
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\AddLocation.g.cs
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\AddPhotographerWin.g.cs
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\AddVidUslugiWin.g.cs
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\ForAdminWindow.g.cs
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\MainWindow.g.cs
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Pages\ChartPage.g.cs
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Pages\ClientPage.g.cs
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Pages\ClientTable.g.cs
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Pages\DogovorTable.g.cs
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Pages\HomePage.g.cs
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Pages\LocationsTable.g.cs
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Pages\OtchetPage.g.cs
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Pages\PhotographerTable.g.cs
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Pages\VidUslugiTable.g.cs
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\App.g.cs
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Фотостудия_Content.g.cs
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Фотостудия_MarkupCompile.cache
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Фотостудия_MarkupCompile.lref
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\App.baml
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\AddClientWin.baml
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\AddLocation.baml
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\AddPhotographerWin.baml
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\AddVidUslugiWin.baml
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\ForAdminWindow.baml
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\MainWindow.baml
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Pages\ChartPage.baml
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Pages\ClientPage.baml
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Pages\ClientTable.baml
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Pages\DogovorTable.baml
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Pages\HomePage.baml
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Pages\LocationsTable.baml
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Pages\OtchetPage.baml
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Pages\PhotographerTable.baml
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Pages\VidUslugiTable.baml
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Фотостудия.g.resources
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Фотостудия.Properties.Resources.resources
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Фотостудия.csproj.GenerateResource.cache
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Фотостудия.csproj.CoreCompileInputs.cache
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Фотостудия.csproj.CopyComplete
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Фотостудия.exe
+C:\Users\andre\Desktop\Фотостудия — копия\obj\Debug\Фотостудия.pdb
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\AddDogovorWin.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\AddDogovorWin.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\JournalTable.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\JournalTable.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\AddJournalWIn.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\AddJournalWIn.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\PortfolioWin.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\PortfolioWin.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\AddPortfolio.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\AddPortfolio.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Фотостудия.csproj.ResolveComReference.cache
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\MaterialDesignColors.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\MaterialDesignExtensions.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\MaterialDesignColors.pdb
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\MaterialDesignExtensions.xml
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\ar-DZ\MaterialDesignExtensions.resources.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\cs\MaterialDesignExtensions.resources.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\cs-CZ\MaterialDesignExtensions.resources.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\de\MaterialDesignExtensions.resources.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\fr\MaterialDesignExtensions.resources.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\fr-FR\MaterialDesignExtensions.resources.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\pt\MaterialDesignExtensions.resources.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\pt-BR\MaterialDesignExtensions.resources.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\Ru\MaterialDesignExtensions.resources.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\ru-ru\MaterialDesignExtensions.resources.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\uz-Latn-UZ\MaterialDesignExtensions.resources.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\libSkiaSharp.dylib
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\x86\libSkiaSharp.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\x64\libSkiaSharp.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\arm64\libSkiaSharp.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\x64\libSkiaSharp.so
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\arm\libSkiaSharp.so
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\arm64\libSkiaSharp.so
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\musl-x64\libSkiaSharp.so
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\GLWpfControl.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\OpenTK.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\ScottPlot.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\ScottPlot.WPF.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\SkiaSharp.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\SkiaSharp.Views.Desktop.Common.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\SkiaSharp.Views.WPF.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\System.Buffers.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\System.Drawing.Common.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\System.Memory.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\System.ValueTuple.dll
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\GLWpfControl.pdb
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\OpenTK.pdb
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\OpenTK.xml
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\ScottPlot.xml
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\ScottPlot.WPF.xml
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\SkiaSharp.pdb
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\SkiaSharp.xml
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\SkiaSharp.Views.Desktop.Common.pdb
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\SkiaSharp.Views.Desktop.Common.xml
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\SkiaSharp.Views.WPF.pdb
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\SkiaSharp.Views.WPF.xml
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\System.Buffers.xml
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\System.Memory.xml
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\andre\Desktop\Фотостудия\bin\Debug\System.ValueTuple.xml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\ForClientWindow.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\ForClientWindow.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\PhotogsForClient.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\PhotogsForClient.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\PortfolioForClient.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\PortfolioForClient.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\DogovorsForClient.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\DogovorsForClient.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\JournalForClient.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\JournalForClient.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\LocationsForClient.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\LocationsForClient.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\VidUslugiForClients.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\VidUslugiForClients.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\RegistrationJournal.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\RegistrationJournal.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\ForPhotographerWin.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\ForPhotographerWin.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\DogovorsForPhotog.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\DogovorsForPhotog.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\SchedulePhotog.g.cs
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Pages\SchedulePhotog.baml
+C:\Users\andre\Desktop\Фотостудия\obj\Debug\Фотостудия.csproj.Up2Date

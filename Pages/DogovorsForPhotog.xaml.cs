@@ -1,0 +1,287 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using word = Microsoft.Office.Interop.Word;
+namespace Фотостудия.Pages
+{
+    /// <summary>
+    /// Логика взаимодействия для DogovorsForPhotog.xaml
+    /// </summary>
+    public partial class DogovorsForPhotog : Page
+    {
+        List<Договор> currentList = new List<Договор>();
+        private int _currentPage = 1;
+        private int _count = 5;
+        private int _maxPages;
+        Фотограф photog;
+        public DogovorsForPhotog(Фотограф photog)
+        {
+            InitializeComponent();
+            this.photog = photog;
+            currentList = MainWindow.db.Договор.Where(p => p.Номер_фотографа == MainWindow.curPhotog.Табельный_номер).ToList();
+            Refresh();
+        }
+
+        /// <summary>
+        /// Редактирование договора
+        /// </summary>
+        private void bt_Edit(object sender, RoutedEventArgs e)
+        {
+            var editButton = sender as Button;
+            var selected = editButton.DataContext as Договор;
+            AddDogovorWin edit = new AddDogovorWin(selected);
+            edit.cb_Clients.IsEnabled = false;
+            edit.cb_Photog.IsEnabled = false;
+            edit.ShowDialog();
+            currentList = MainWindow.db.Договор.Where(p => p.Номер_фотографа == MainWindow.curPhotog.Табельный_номер).ToList();
+            Refresh();
+        }
+
+        /// <summary>
+        /// Удаление договора
+        /// </summary>
+        private void bt_Delete(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var deleted = dg1.SelectedItem as Договор;
+
+                if (deleted != null)
+                {
+                    MessageBoxResult result = MessageBox.Show(
+                        "Вы точно хотите удалить запись?",
+                        "Внимание!",
+                        MessageBoxButton.YesNo,
+                        MessageBoxImage.Error);
+
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        MainWindow.db.Договор.Remove(deleted);
+                        MainWindow.db.SaveChanges();
+                        MessageBox.Show("Запись удалена!");
+                        currentList = MainWindow.db.Договор.Where(p => p.Номер_фотографа == MainWindow.curPhotog.Табельный_номер).ToList();
+                        Refresh();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Применение фильтров
+        /// </summary>
+        private void btFilterAccept_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var newList = MainWindow.db.Договор.Where(p => p.Номер_фотографа == MainWindow.curPhotog.Табельный_номер).ToList();
+                DateTime from, to;
+
+                if (!String.IsNullOrEmpty(dateFrom.Text) && (!DateTime.TryParse(dateFrom.Text, out from) || !DateTime.TryParse(dateTo.Text, out to)))
+                    throw new Exception("Введите верный формат даты");
+
+                List<int> stat = new List<int>();
+
+                //Статус договора
+                if (cbDone.IsChecked == true)
+                    stat.Add(1);
+
+                if (cbWaiting.IsChecked == true)
+                    stat.Add(2);
+
+                if (cbCanceled.IsChecked == true)
+                    stat.Add(3);
+
+                if (!String.IsNullOrEmpty(dateFrom.Text))
+                    currentList = newList.Where(p => p.Окончание_съемки <= Convert.ToDateTime(dateTo.Text) && 
+                    p.Начало_съемки >= Convert.ToDateTime(dateFrom.Text) && stat.Contains(p.Статус_договора)).ToList();
+                else
+                    currentList = newList.Where(p => stat.Contains(p.Статус_договора)).ToList();
+
+                Refresh();
+                spFilter.Visibility = Visibility.Hidden;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Поиск
+        /// </summary>
+        private void searchTextChanged(object sender, TextChangedEventArgs e)
+        {
+            string seachText = tbSearch.Text;
+            var newlist = currentList;
+            if (!string.IsNullOrWhiteSpace(seachText))
+            {
+                newlist = currentList.Where(p => p.Клиент.FIO.ToLower().Contains(seachText.ToLower())).ToList();
+            }
+
+            _maxPages = (int)Math.Ceiling(currentList.Count() * 1.0 / _count);
+
+            var listPage = newlist.Skip((_currentPage - 1) * _count).Take(_count).ToList();
+
+            TxtCurrentPage.Text = _currentPage.ToString();
+            LblTotalPages.Content = "из " + _maxPages;
+
+            dg1.ItemsSource = listPage;
+        }
+
+        /// <summary>
+        /// Обновление списка
+        /// </summary>
+        private void Refresh()
+        {
+            _maxPages = (int)Math.Ceiling(currentList.Count() * 1.0 / _count);
+
+            var listPage = currentList.Skip((_currentPage - 1) * _count).Take(_count).ToList();
+
+            TxtCurrentPage.Text = _currentPage.ToString();
+            LblTotalPages.Content = "из " + _maxPages;
+
+            dg1.ItemsSource = listPage;
+        }
+
+        /// <summary>
+        /// Сброс фильтров
+        /// </summary>
+        private void btFilterReset_Click(object sender, RoutedEventArgs e)
+        {
+            cbCanceled.IsChecked = true;
+            cbDone.IsChecked = true;
+            cbWaiting.IsChecked = true;
+            dateFrom.Text = "";
+            dateTo.Text = "";
+            tbSearch.Text = "";
+            currentList = MainWindow.db.Договор.ToList();
+            Refresh();
+        }
+
+        /// <summary>
+        /// Применение фильтров
+        /// </summary>
+        private void btFilter_Click(object sender, RoutedEventArgs e)
+        {
+            if (spFilter.Visibility != Visibility.Visible)
+                spFilter.Visibility = Visibility.Visible;
+            else
+                spFilter.Visibility = Visibility.Hidden;
+        }
+
+        private void GoToFirstPage(object sender, RoutedEventArgs e)
+        {
+            _currentPage = 1;
+            Refresh();
+        }
+
+        private void GoToPreviousPage(object sender, RoutedEventArgs e)
+        {
+            if (_currentPage <= 1) _currentPage = 1;
+            else
+                _currentPage--;
+            Refresh();
+        }
+
+        private void GoToNextPage(object sender, RoutedEventArgs e)
+        {
+            if (_currentPage >= _maxPages) _currentPage = _maxPages;
+            else
+                _currentPage++;
+            Refresh();
+        }
+
+        private void GoToLastPage(object sender, RoutedEventArgs e)
+        {
+            _currentPage = _maxPages;
+            Refresh();
+        }
+
+        Договор selected = new Договор();
+
+        /// <summary>
+        /// Показ журнала фотосъемки
+        /// </summary>
+        private void dg_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            selected = dg1.SelectedItem as Договор;
+            frame1.NavigationService.Navigate(new Pages.JournalTable(selected));
+        }
+
+        /// <summary>
+        /// Печать договора
+        /// </summary>
+        private void btPrint_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                word.Application app = new word.Application();
+                var selected = dg1.SelectedItem as Договор;
+                if (selected == null)
+                    throw new Exception("Выберите договор");
+
+                string filename = AppDomain.CurrentDomain.BaseDirectory + "Договор.docx";
+                string fileTitle = "Договор " + selected.Номер_договора.ToString();
+                string path = AppDomain.CurrentDomain.BaseDirectory + fileTitle;
+                File.Copy(filename, path, true);
+
+                word.Document doc = app.Documents.Open(path);
+
+                FindAndReplace(app, @"номерДоговора", selected.Номер_договора.ToString());
+                FindAndReplace(app, @"числоТек", DateTime.Now.Day.ToString());
+                FindAndReplace(app, @"месяцТек", DateTime.Now.ToString("MMMM"));
+                FindAndReplace(app, @"годТек", DateTime.Now.Year.ToString());
+                FindAndReplace(app, @"ФИОФотографа", selected.Фотограф.Фамилия.Trim() + " " + selected.Фотограф.Имя.Trim() + " " + selected.Фотограф.Отчество.Trim());
+                FindAndReplace(app, @"датаРождения", selected.Фотограф.Дата_рождения.ToString("d") + "г.");
+                FindAndReplace(app, @"числоЗаказа", selected.Начало_съемки.Day.ToString());
+                FindAndReplace(app, @"месяцЗаказа", selected.Начало_съемки.ToString("MMMM"));
+                FindAndReplace(app, @"годЗаказа", selected.Начало_съемки.Year.ToString());
+                FindAndReplace(app, @"стоимостьСъемки", selected.Стоимость.ToString("f2") + " руб.");
+                FindAndReplace(app, @"инициалыФотографа", selected.Фотограф.FIO);
+                FindAndReplace(app, @"инициалыКлиента", selected.Клиент.FIO);
+                FindAndReplace(app, @"телефонФотографа", selected.Фотограф.Телефон);
+                FindAndReplace(app, @"телефонКлиента", selected.Клиент.Телефон);
+                app.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
+
+        /// <summary>
+        /// Поиск и замена в док файле
+        /// </summary>
+        private void FindAndReplace(word.Application app, string f, string r)
+        {
+            app.Selection.Find.ClearFormatting();
+            word.Range range = app.Selection.Range;
+            app.Selection.Find.Replacement.ClearFormatting();
+            app.Selection.Find.Replacement.Text = r;
+            app.Selection.Find.Execute(f, Replace: word.WdReplace.wdReplaceAll);
+
+            app.Selection.WholeStory();
+            app.Options.DefaultHighlightColorIndex = word.WdColorIndex.wdNoHighlight;
+            app.Selection.Range.HighlightColorIndex = word.WdColorIndex.wdWhite;
+        }
+    }
+}
+

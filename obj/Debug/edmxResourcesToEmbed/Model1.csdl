@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ФотостудияModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Администратор">
+    <Key>
+      <PropertyRef Name="Номер_администратора" />
+    </Key>
+    <Property Name="Номер_администратора" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Логин" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Пароль" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Вид_услуги">
+    <Key>
+      <PropertyRef Name="Номер_вида" />
+    </Key>
+    <Property Name="Номер_вида" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Название" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Описание" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Стоимость" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Договор" Relationship="Self.FK_Договор_Вид_услуги" FromRole="Вид_услуги" ToRole="Договор" />
+  </EntityType>
+  <EntityType Name="Договор">
+    <Key>
+      <PropertyRef Name="Номер_договора" />
+    </Key>
+    <Property Name="Номер_договора" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Номер_клиента" Type="Int32" Nullable="false" />
+    <Property Name="Вид_услуги" Type="Int32" Nullable="false" />
+    <Property Name="Номер_фотографа" Type="Int32" Nullable="false" />
+    <Property Name="Номер_локации" Type="Int32" Nullable="false" />
+    <Property Name="Начало_съемки" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Окончание_съемки" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Статус_договора" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Вид_услуги1" Relationship="Self.FK_Договор_Вид_услуги" FromRole="Договор" ToRole="Вид_услуги" />
+    <NavigationProperty Name="Клиент" Relationship="Self.FK_Договор_Клиент" FromRole="Договор" ToRole="Клиент" />
+    <NavigationProperty Name="Локация" Relationship="Self.FK_Договор_Локация" FromRole="Договор" ToRole="Локация" />
+    <NavigationProperty Name="Статус" Relationship="Self.FK_Договор_Статус" FromRole="Договор" ToRole="Статус" />
+    <NavigationProperty Name="Фотограф" Relationship="Self.FK_Договор_Фотограф" FromRole="Договор" ToRole="Фотограф" />
+    <NavigationProperty Name="Журнал_фотосъемки" Relationship="Self.FK_Журнал_фотосъемки_Договор" FromRole="Договор" ToRole="Журнал_фотосъемки" />
+  </EntityType>
+  <EntityType Name="Журнал_фотосъемки">
+    <Key>
+      <PropertyRef Name="Номер_записи" />
+      <PropertyRef Name="Номер_договора" />
+    </Key>
+    <Property Name="Номер_записи" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Номер_договора" Type="Int32" Nullable="false" />
+    <Property Name="Изображение" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Договор" Relationship="Self.FK_Журнал_фотосъемки_Договор" FromRole="Журнал_фотосъемки" ToRole="Договор" />
+  </EntityType>
+  <EntityType Name="Клиент">
+    <Key>
+      <PropertyRef Name="Номер_клиента" />
+    </Key>
+    <Property Name="Номер_клиента" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Фамилия" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Имя" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Отчество" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Номер_паспорта" Type="Int32" Nullable="false" />
+    <Property Name="Серия_паспорта" Type="Int32" Nullable="false" />
+    <Property Name="Дата_рождения" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Телефон" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Логин" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Пароль" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Договор" Relationship="Self.FK_Договор_Клиент" FromRole="Клиент" ToRole="Договор" />
+  </EntityType>
+  <EntityType Name="Локация">
+    <Key>
+      <PropertyRef Name="Номер_локации" />
+    </Key>
+    <Property Name="Номер_локации" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Адрес" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Изображение" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Во_владении_компании" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Договор" Relationship="Self.FK_Договор_Локация" FromRole="Локация" ToRole="Договор" />
+  </EntityType>
+  <EntityType Name="Портфолио_фотографа">
+    <Key>
+      <PropertyRef Name="Номер_портфолио" />
+      <PropertyRef Name="Номер_фотографа" />
+    </Key>
+    <Property Name="Номер_портфолио" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Номер_фотографа" Type="Int32" Nullable="false" />
+    <Property Name="Изображение" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Фотограф" Relationship="Self.FK_Портфолио_фотографа_Фотограф" FromRole="Портфолио_фотографа" ToRole="Фотограф" />
+  </EntityType>
+  <EntityType Name="Статус">
+    <Key>
+      <PropertyRef Name="Номер_статуса" />
+    </Key>
+    <Property Name="Номер_статуса" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Наименование" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Договор" Relationship="Self.FK_Договор_Статус" FromRole="Статус" ToRole="Договор" />
+  </EntityType>
+  <EntityType Name="Фотограф">
+    <Key>
+      <PropertyRef Name="Табельный_номер" />
+    </Key>
+    <Property Name="Табельный_номер" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Фамилия" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Имя" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Отчество" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Номер_паспорта" Type="Int32" Nullable="false" />
+    <Property Name="Серия_паспорта" Type="Int32" Nullable="false" />
+    <Property Name="Дата_рождения" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Телефон" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Логин" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Пароль" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Договор" Relationship="Self.FK_Договор_Фотограф" FromRole="Фотограф" ToRole="Договор" />
+    <NavigationProperty Name="Портфолио_фотографа" Relationship="Self.FK_Портфолио_фотографа_Фотограф" FromRole="Фотограф" ToRole="Портфолио_фотографа" />
+  </EntityType>
+  <Association Name="FK_Договор_Вид_услуги">
+    <End Role="Вид_услуги" Type="Self.Вид_услуги" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Договор" Type="Self.Договор" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Вид_услуги">
+        <PropertyRef Name="Номер_вида" />
+      </Principal>
+      <Dependent Role="Договор">
+        <PropertyRef Name="Вид_услуги" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Договор_Клиент">
+    <End Role="Клиент" Type="Self.Клиент" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Договор" Type="Self.Договор" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Клиент">
+        <PropertyRef Name="Номер_клиента" />
+      </Principal>
+      <Dependent Role="Договор">
+        <PropertyRef Name="Номер_клиента" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Договор_Локация">
+    <End Role="Локация" Type="Self.Локация" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Договор" Type="Self.Договор" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Локация">
+        <PropertyRef Name="Номер_локации" />
+      </Principal>
+      <Dependent Role="Договор">
+        <PropertyRef Name="Номер_локации" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Договор_Статус">
+    <End Role="Статус" Type="Self.Статус" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Договор" Type="Self.Договор" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Статус">
+        <PropertyRef Name="Номер_статуса" />
+      </Principal>
+      <Dependent Role="Договор">
+        <PropertyRef Name="Статус_договора" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Договор_Фотограф">
+    <End Role="Фотограф" Type="Self.Фотограф" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Договор" Type="Self.Договор" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Фотограф">
+        <PropertyRef Name="Табельный_номер" />
+      </Principal>
+      <Dependent Role="Договор">
+        <PropertyRef Name="Номер_фотографа" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Журнал_фотосъемки_Договор">
+    <End Role="Договор" Type="Self.Договор" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Журнал_фотосъемки" Type="Self.Журнал_фотосъемки" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Договор">
+        <PropertyRef Name="Номер_договора" />
+      </Principal>
+      <Dependent Role="Журнал_фотосъемки">
+        <PropertyRef Name="Номер_договора" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Портфолио_фотографа_Фотограф">
+    <End Role="Фотограф" Type="Self.Фотограф" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Портфолио_фотографа" Type="Self.Портфолио_фотографа" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Фотограф">
+        <PropertyRef Name="Табельный_номер" />
+      </Principal>
+      <Dependent Role="Портфолио_фотографа">
+        <PropertyRef Name="Номер_фотографа" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ФотостудияEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Администратор" EntityType="Self.Администратор" />
+    <EntitySet Name="Вид_услуги" EntityType="Self.Вид_услуги" />
+    <EntitySet Name="Договор" EntityType="Self.Договор" />
+    <EntitySet Name="Журнал_фотосъемки" EntityType="Self.Журнал_фотосъемки" />
+    <EntitySet Name="Клиент" EntityType="Self.Клиент" />
+    <EntitySet Name="Локация" EntityType="Self.Локация" />
+    <EntitySet Name="Портфолио_фотографа" EntityType="Self.Портфолио_фотографа" />
+    <EntitySet Name="Статус" EntityType="Self.Статус" />
+    <EntitySet Name="Фотограф" EntityType="Self.Фотограф" />
+    <AssociationSet Name="FK_Договор_Вид_услуги" Association="Self.FK_Договор_Вид_услуги">
+      <End Role="Вид_услуги" EntitySet="Вид_услуги" />
+      <End Role="Договор" EntitySet="Договор" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Договор_Клиент" Association="Self.FK_Договор_Клиент">
+      <End Role="Клиент" EntitySet="Клиент" />
+      <End Role="Договор" EntitySet="Договор" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Договор_Локация" Association="Self.FK_Договор_Локация">
+      <End Role="Локация" EntitySet="Локация" />
+      <End Role="Договор" EntitySet="Договор" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Договор_Статус" Association="Self.FK_Договор_Статус">
+      <End Role="Статус" EntitySet="Статус" />
+      <End Role="Договор" EntitySet="Договор" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Договор_Фотограф" Association="Self.FK_Договор_Фотограф">
+      <End Role="Фотограф" EntitySet="Фотограф" />
+      <End Role="Договор" EntitySet="Договор" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Журнал_фотосъемки_Договор" Association="Self.FK_Журнал_фотосъемки_Договор">
+      <End Role="Договор" EntitySet="Договор" />
+      <End Role="Журнал_фотосъемки" EntitySet="Журнал_фотосъемки" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Портфолио_фотографа_Фотограф" Association="Self.FK_Портфолио_фотографа_Фотограф">
+      <End Role="Фотограф" EntitySet="Фотограф" />
+      <End Role="Портфолио_фотографа" EntitySet="Портфолио_фотографа" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

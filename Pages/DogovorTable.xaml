@@ -1,0 +1,146 @@
+﻿<Page x:Class="Фотостудия.Pages.DogovorTable"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Фотостудия.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DogovorTable">
+    <Page.Resources>
+        <SolidColorBrush Color="#9c9c9c" Opacity="0.6" x:Key="reset"/>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        <DockPanel>
+            <Grid  HorizontalAlignment="Left" Margin="10">
+                <Button Background="Transparent" BorderBrush="Transparent" Click="DogovorAdd_Click">
+                    <Image Source="PagesImgs/add.png" Height="25"/>
+                </Button>
+            </Grid>
+            <Grid DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="25, 5">
+                <Button Background="Transparent" BorderBrush="Transparent" Click="btFilter_Click" Margin="80, 0, 0 ,0" >
+                    <Image Source="PagesImgs/filter.png" Height="25"/>
+                </Button>
+                <Button Background="Transparent" BorderBrush="Transparent" Click="btPrint_Click" Width="30">
+                    <Image Source="PagesImgs/print.png" Height="25"/>
+                </Button>
+            </Grid>
+
+        </DockPanel>
+        <DataGrid Name="dg1" AutoGenerateColumns="False" ColumnWidth="*" IsReadOnly="True" Grid.Row="1" FontSize="17" Background="White" SelectionChanged="dg_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№ Договора" Binding="{Binding Номер_договора}"/>
+                <DataGridTextColumn Header="Клиент" Binding="{Binding Клиент.FIO}"/>
+                <DataGridTextColumn Header="Фотограф" Binding="{Binding Фотограф.FIO}"/>
+                <DataGridTextColumn Header="Услуга" Binding="{Binding Вид_услуги1.Название}"/>
+                <DataGridTextColumn Header="Начало съемки" Binding="{Binding Начало_съемки, StringFormat= {}{0:g}}"/>
+                <DataGridTextColumn Header="Конец съемки" Binding="{Binding Окончание_съемки, StringFormat= {}{0:g}}"/>
+                <DataGridTextColumn Header="Адрес" Binding="{Binding Локация.Адрес}"/>
+                <DataGridTextColumn Header="Стоимость" Binding="{Binding Стоимость, StringFormat={}{0:f2} руб.}"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding Статус.Наименование}"/>
+                <DataGridTemplateColumn Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Width="30" Height="30" Margin="5, 0" Background="Transparent" BorderBrush="Transparent" Click="bt_Edit">
+                                <Image Source="PagesImgs/Edit.png"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Width="30" Height="30" Margin="5, 0"  BorderBrush="Transparent" Background="Transparent" Click="bt_Delete">
+                                <Image Source="PagesImgs/Delete.png"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Frame Grid.Row="2" NavigationUIVisibility="Hidden" Name="frame1">
+            
+        </Frame>
+
+        <StackPanel Grid.Row="1" Grid.RowSpan="2" Name="spFilter" Background="#e8e8e8" Width="250" Height="400" HorizontalAlignment="Right" Visibility="Hidden">
+            <Label FontSize="16">Дата заказа</Label>
+            <TextBox Height="30" Margin="10, 5" FontFamily="16" VerticalContentAlignment="Center" Name="dateFrom"></TextBox>
+            <TextBlock IsHitTestVisible="False" Name="tblFrom" Text="от" Margin="15, -30, 0 , 0" VerticalAlignment="Center" Height="25">
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=dateFrom}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            <TextBox Height="30" Margin="10, 5" FontFamily="16" VerticalContentAlignment="Center" Name="dateTo"></TextBox>
+            <TextBlock IsHitTestVisible="False" Name="tblTo" Text="до" Margin="15, -30, 0 , 0" VerticalAlignment="Center" Height="25">
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=dateTo}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            <Label FontSize="16">Поиск по клиенту/фотографу</Label>
+            <TextBox Height="30" Margin="10, 5" FontFamily="16" VerticalContentAlignment="Center" Name="tbSearch" TextChanged="searchTextChanged"></TextBox>
+            <TextBlock IsHitTestVisible="False" Name="tblSearch" Text="поиск..." Margin="15, -30, 0 , 0" VerticalAlignment="Center" Height="25">
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=tbSearch}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            <Label  FontSize="16">Статус</Label>
+            <StackPanel>
+                <CheckBox Name="cbDone" IsChecked="True">Выполнен</CheckBox>
+                <CheckBox Name="cbWaiting" IsChecked="True">Ожидает выполнения</CheckBox>
+                <CheckBox Name="cbCanceled" IsChecked="True">Отменен</CheckBox>
+            </StackPanel>
+            <Border CornerRadius="3" Background="{StaticResource reset}" Margin="10, 10, 10, 5">
+                <Button Content="Сбросить" FontSize="14" Click="btFilterReset_Click" Background="{StaticResource reset}" BorderBrush="Transparent"/>
+            </Border>
+            <Border CornerRadius="3" Background="#18359C" Margin="10, 5">
+                <Button Content="Применить" FontSize="14" Style="{StaticResource mainBtnns}" Click="btFilterAccept_Click"/>
+            </Border>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center" Margin="8">
+            <Button Click="GoToFirstPage" Background="Transparent" BorderBrush="Transparent" Height="30">
+                <Image Source="PagesImgs/fst.png"/>
+            </Button>
+            <Button Click="GoToPreviousPage" Background="Transparent" BorderBrush="Transparent" Height="30" Margin="10, 0">
+                <Image Source="PagesImgs/prev.png"/>
+            </Button>
+            <TextBox Name="TxtCurrentPage" IsReadOnly="True" Height="30" Width="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></TextBox>
+            <Label Name="LblTotalPages" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">of N</Label>
+            <Button Click="GoToNextPage" Background="Transparent" BorderBrush="Transparent" Height="30" Margin="10, 0">
+                <Image Source="PagesImgs/next.png"/>
+            </Button>
+            <Button Click="GoToLastPage" Background="Transparent" BorderBrush="Transparent" Height="30">
+                <Image Source="PagesImgs/last.png"/>
+            </Button>
+
+        </StackPanel>
+    </Grid>
+</Page>

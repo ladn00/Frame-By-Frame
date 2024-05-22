@@ -1,0 +1,41 @@
+﻿<Page x:Class="Фотостудия.Pages.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Фотостудия.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="HomePage">
+
+    <Grid>
+        <StackPanel Margin="20" Width="1050">
+            <TextBlock TextWrapping="Wrap" TextAlignment="Justify">
+                Фотостудия "Frame By Frame" – это одна из старейших фотостудий в Челябинск. Мы занимаемся предоставлением услуг в сфере фотографии любой степени сложности: от частных семейных фотосессий до масштабных корпоративных проектов.
+<LineBreak/>
+            </TextBlock>
+
+            <Image Source="PagesImgs/Лого.png" Width="200" Height="100" HorizontalAlignment="Center" Margin="20"/>
+            <TextBlock TextWrapping="Wrap" TextAlignment="Justify">
+            <LineBreak/><Run FontStyle="Italic">Почему стоит выбрать нас?</Run>
+                <LineBreak/><Run FontWeight="Bold">- Качество</Run>
+                <LineBreak/>MAGNET – это профессиональные фотографы, операторы, дизайнеры, опять дизайнеры и снова фотографы. А еще визажисты, модели, печатники, декораторы и все те, кто обеспечивает самый высокий уровень в работе над вашим проектом.
+<LineBreak/>
+            <LineBreak/> <Run FontWeight="Bold">- Снимаем с 1984 года</Run>
+            <LineBreak/>У нас есть опыт, четкая структура взаимодействия с клиентом и наработанная система решения поставленных задач.
+<LineBreak/>
+<LineBreak/><Run FontWeight="Bold">- Развернутые и прозрачные сметы </Run>
+<LineBreak/>Вы видите цены за каждую из позиций и можете корректировать техническое задание согласно бюджету.
+<LineBreak/>
+<LineBreak/><Run FontWeight="Bold">- Соблюдение сроков</Run>
+<LineBreak/>Работаем до окончательной приемки заказа клиентом, а при необходимости – в выходные и праздничные дни.
+<LineBreak/>
+<LineBreak/><Run FontWeight="Bold">- Надежность и конфиденциальность</Run>
+<LineBreak/>Храним материалы с фотосъемок в течение десяти лет и, при необходимости, пропишем в договоре пункты о неразглашении информации. Мы снимем для вас все – и никто об этом не узнает.
+<LineBreak/>
+<LineBreak/><Run FontWeight="Bold">- Гарантия проведения фотосъемки</Run>
+<LineBreak/>Обращаясь к фотографу-фрилансеру, вы можете разочароваться, ведь он может заболеть/забыть/захандрить. Мы – команда профессионалов, и обеспечим вам съемку в любом случае.
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</Page>
