@@ -15,6 +15,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using word = Microsoft.Office.Interop.Word;
 using System.IO;
+using System.Xml;
+using System.Globalization;
+
 namespace Фотостудия.Pages
 {
     /// <summary>
@@ -117,7 +120,7 @@ namespace Фотостудия.Pages
                 if (cbCanceled.IsChecked == true)
                     stat.Add(3);
 
-                if(!String.IsNullOrEmpty(dateFrom.Text))
+                if (!String.IsNullOrEmpty(dateFrom.Text))
                     currentList = newList.Where(p => p.Окончание_съемки <= Convert.ToDateTime(dateTo.Text) && p.Начало_съемки >= Convert.ToDateTime(dateFrom.Text) && stat.Contains(p.Статус_договора));
                 else
                     currentList = newList.Where(p => stat.Contains(p.Статус_договора));
@@ -242,16 +245,16 @@ namespace Фотостудия.Pages
             {
                 word.Application app = new word.Application();
                 var selected = dg1.SelectedItem as Договор;
-                if(selected == null) 
+                if (selected == null)
                     throw new Exception("Выберите договор");
 
                 string filename = AppDomain.CurrentDomain.BaseDirectory + "Договор.docx";
-                string fileTitle = "Договор "  +  selected.Номер_договора.ToString();
+                string fileTitle = "Договор " + selected.Номер_договора.ToString();
                 string path = AppDomain.CurrentDomain.BaseDirectory + fileTitle;
                 File.Copy(filename, path, true);
 
                 word.Document doc = app.Documents.Open(path);
-                
+
                 FindAndReplace(app, @"номерДоговора", selected.Номер_договора.ToString());
                 FindAndReplace(app, @"числоТек", DateTime.Now.Day.ToString());
                 FindAndReplace(app, @"месяцТек", DateTime.Now.ToString("MMMM"));
@@ -268,18 +271,18 @@ namespace Фотостудия.Pages
                 FindAndReplace(app, @"телефонКлиента", selected.Клиент.Телефон);
                 app.Visible = true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
-            
+
         }
 
         /// <summary>
         /// Поиск и замена
         /// </summary>
-        private void FindAndReplace(word.Application app,string f, string r)
+        private void FindAndReplace(word.Application app, string f, string r)
         {
             app.Selection.Find.ClearFormatting();
             word.Range range = app.Selection.Range;
@@ -291,5 +294,107 @@ namespace Фотостудия.Pages
             app.Options.DefaultHighlightColorIndex = word.WdColorIndex.wdNoHighlight;
             app.Selection.Range.HighlightColorIndex = word.WdColorIndex.wdWhite;
         }
+
+
+        /// <summary>
+        /// Экспорт договоров в xml-файл
+        /// </summary>
+        private void Export_Click(object sender, RoutedEventArgs e)
+        {
+            List<Договор> dogovorsToExport = new List<Договор>();
+
+            if (dg1.SelectedItems.Count < 1)
+            {
+                MessageBox.Show("Вы не выбрали записи для экспорта.");
+                return;
+            }
+
+            foreach (Договор el in dg1.SelectedItems)
+            {
+                dogovorsToExport.Add(el);
+            }
+
+            using (XmlWriter writer = XmlWriter.Create("..//..//export/output.xml"))
+            {
+                writer.WriteStartDocument();
+                writer.WriteStartElement("dogovors");
+
+                foreach (var el in dogovorsToExport)
+                {
+                    writer.WriteStartElement("product");
+                    writer.WriteElementString("clientid", el.Номер_клиента.ToString());
+                    writer.WriteElementString("viduslugiid", el.Вид_услуги.ToString());
+                    writer.WriteElementString("photogid", el.Номер_фотографа.ToString());
+                    writer.WriteElementString("locationid", el.Номер_локации.ToString());
+                    writer.WriteElementString("datestart", el.Начало_съемки.ToString(new CultureInfo("en-us")));
+                    writer.WriteElementString("dateend", el.Окончание_съемки.ToString(new CultureInfo("en-us")));
+                    writer.WriteElementString("statusid", el.Статус_договора.ToString());
+                    writer.WriteEndElement();
+                }
+                writer.WriteEndElement();
+                writer.WriteEndDocument();
+
+                MessageBox.Show("Файл \"output.xml\" был сохранен в папке \"export\".");
+            }
+        }
+
+        private void XmlImport_Click(object sender, RoutedEventArgs e)
+        {
+            string filename = "";
+            var dialog = new Microsoft.Win32.OpenFileDialog();
+            dialog.DefaultExt = ".xml";
+            dialog.Filter = "XML files (*.xml)|*.xml";
+
+            bool? result = dialog.ShowDialog();
+
+            if (result == true)
+            {
+                filename = dialog.FileName;
+
+                using (XmlReader reader = XmlReader.Create(filename))
+                {
+                    while (reader.Read())
+                    {
+                        var importedDogovor = new Договор();
+                        if (reader.NodeType == XmlNodeType.Attribute && reader.Name == "clientid")
+                        {
+                            importedDogovor.Номер_клиента = int.Parse(reader.ReadElementContentAsString());
+                        }
+                        if (reader.NodeType == XmlNodeType.Attribute && reader.Name == "viduslugiid")
+                        {
+                            importedDogovor.Вид_услуги = int.Parse(reader.ReadElementContentAsString());
+                        }
+                        if (reader.NodeType == XmlNodeType.Attribute && reader.Name == "photogid")
+                        {
+                            importedDogovor.Номер_фотографа = int.Parse(reader.ReadElementContentAsString());
+                        }
+                        if (reader.NodeType == XmlNodeType.Attribute && reader.Name == "locationid")
+                        {
+                            importedDogovor.Номер_локации = int.Parse(reader.ReadElementContentAsString());
+                        }
+                        if (reader.NodeType == XmlNodeType.Attribute && reader.Name == "datestart")
+                        {
+                            importedDogovor.Начало_съемки = Convert.ToDateTime(reader.ReadElementContentAsString(), new CultureInfo("en-us"));
+                        }
+                        if (reader.NodeType == XmlNodeType.Attribute && reader.Name == "dateend")
+                        {
+                            importedDogovor.Окончание_съемки = Convert.ToDateTime(reader.ReadElementContentAsString(), new CultureInfo("en-us"));
+                        }
+                        if (reader.NodeType == XmlNodeType.Attribute && reader.Name == "statusid")
+                        {
+                            importedDogovor.Статус_договора = int.Parse(reader.ReadElementContentAsString());
+                        }
+
+                        MainWindow.db.Договор.Add(importedDogovor);
+                        
+                    }
+                }
+                MainWindow.db.SaveChanges();
+                currentList = MainWindow.db.Договор.ToList();
+                Refresh();
+            }
+
+        }
     }
 }
+

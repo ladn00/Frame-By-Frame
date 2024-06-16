@@ -18,11 +18,17 @@
             <RowDefinition Height="0.1*"/>
         </Grid.RowDefinitions>
         <DockPanel>
-            <Grid  HorizontalAlignment="Left" Margin="10">
+            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" Margin="10">
                 <Button Background="Transparent" BorderBrush="Transparent" Click="DogovorAdd_Click">
                     <Image Source="PagesImgs/add.png" Height="25"/>
                 </Button>
-            </Grid>
+                <Button Background="Transparent" Margin="20, 0" BorderBrush="Transparent" Content="Экспорт" Click="Export_Click">
+
+                </Button>
+                <Button Background="Transparent" Margin="20, 0" BorderBrush="Transparent" Content="Импорт" Click="XmlImport_Click">
+
+                </Button>
+            </StackPanel>
             <Grid DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="25, 5">
                 <Button Background="Transparent" BorderBrush="Transparent" Click="btFilter_Click" Margin="80, 0, 0 ,0" >
                     <Image Source="PagesImgs/filter.png" Height="25"/>

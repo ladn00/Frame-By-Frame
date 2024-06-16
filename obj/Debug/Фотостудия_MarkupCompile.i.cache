@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\andre\Desktop\Фотостудия\obj\Debug\
+C:\Users\USER\Desktop\Frame By Frame Git\obj\Debug\
 Фотостудия
 none
 false
 DEBUG;TRACE
-C:\Users\andre\Desktop\Фотостудия\App.xaml
-31672552836
-15605780162
-49-1761368647
-42-1763696325
+C:\Users\USER\Desktop\Frame By Frame Git\App.xaml
+31-320755561
+151236389987
+49-136897142
+42-1514064146
 AddClientWin.xaml;AddDogovorWin.xaml;AddJournalWIn.xaml;AddLocation.xaml;AddPhotographerWin.xaml;AddPortfolio.xaml;AddVidUslugiWin.xaml;ForAdminWindow.xaml;ForClientWindow.xaml;ForPhotographerWin.xaml;MainWindow.xaml;Pages\ChartPage.xaml;Pages\ClientPage.xaml;Pages\ClientTable.xaml;Pages\DogovorsForClient.xaml;Pages\DogovorsForPhotog.xaml;Pages\DogovorTable.xaml;Pages\HomePage.xaml;Pages\JournalForClient.xaml;Pages\JournalTable.xaml;Pages\LocationsForClient.xaml;Pages\LocationsTable.xaml;Pages\OtchetPage.xaml;Pages\PhotographerTable.xaml;Pages\PhotogsForClient.xaml;Pages\RegistrationJournal.xaml;Pages\SchedulePhotog.xaml;Pages\VidUslugiForClients.xaml;Pages\VidUslugiTable.xaml;PortfolioForClient.xaml;PortfolioWin.xaml;
 
-False
+True
 
